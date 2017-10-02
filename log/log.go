@@ -2,40 +2,30 @@ package log
 
 import (
 	"fmt"
+
 	"github.com/lburgazzoli/camel-go/camel"
+	"github.com/lburgazzoli/camel-go/core"
 )
 
-// *****************************************************************************
+// ==========================
 //
-// 
 //
-// *****************************************************************************
+//
+// ==========================
 
-// LogComponent --
-type LogComponent struct {
-	context camel.Context
+// Component --
+type Component struct {
+	core.DefaultComponent
 }
 
-// Start --
-func (component *LogComponent) Start() {
-}
+// NewComponent --
+func NewComponent() camel.Component {
+	component := &Component{}
 
-// Stop --
-func (component *LogComponent) Stop() {
+	return component
 }
-
-// SetContext --
-func (component *LogComponent) SetContext(context camel.Context) {
-	component.context = context
-}
-
-// Context --
-func (component *LogComponent) Context() camel.Context {
-	return component.context
-}
-
 
 // Process --
-func (component *LogComponent) Process(message string) {
+func (component *Component) Process(message string) {
 	fmt.Printf("%s\n", message)
 }
