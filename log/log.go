@@ -15,14 +15,14 @@ import (
 
 // Component --
 type Component struct {
-	core.DefaultComponent
+	camel.Component
 }
 
 // NewComponent --
 func NewComponent() camel.Component {
-	component := &Component{}
-
-	return component
+	return &Component{
+		Component: core.NewComponent(1),
+	}
 }
 
 // Process --
