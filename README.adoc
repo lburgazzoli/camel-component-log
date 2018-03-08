@@ -1,0 +1,7 @@
+camel-component-log
+====
+
+[source,bash]
+----
+go build -buildmode=plugin
+----
